@@ -1,0 +1,36 @@
+.auth__banner {
+    width: 50%;
+    min-height: 100vh;
+    background-color: #F5F7F9;
+    border-radius: 0 48px 48px 0;
+    box-shadow: 4px 0 8px 1px #2160f25f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__banner img:nth-child(1) {
+    width: 200px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    mix-blend-mode: darken;
+}
+
+.auth__banner img:nth-child(2) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+@media (width <= 800px) {
+
+    .auth__banner {
+        order: 2;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+}

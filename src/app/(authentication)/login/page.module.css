@@ -1,0 +1,108 @@
+.app__login {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__main {
+    width: 360px;
+    max-width: 100%;
+    height: 100%;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login__main > h1 {
+    width: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.login__main > input {
+    width: 100%;
+    border: 1.6px solid #23232398;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.login__pass, .login__submit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.login__pass a, .login__submit p a {
+    font-size: 0.8rem;
+    color: #1357f5;
+    font-weight: 500;
+    text-align: left;
+    width: fit-content;
+    padding: 0.2rem;
+    outline: none;
+    border-radius: 4px;
+}
+
+.login__pass a:focus-visible, .login__submit p a:focus-visible {
+    outline: 1.2px solid #215FF2;
+}
+
+.login__main input:focus, .login__main input:focus-visible, .login__main button:focus-visible {
+    border: 1.6px solid #215FF2;
+    color: #215FF2;
+}
+
+.login__main input:focus::placeholder {
+    color: #215FF2A0;
+}
+
+.login__submit button {
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #215FF2;
+    color: #FFFFFF;
+    border: 1.2px solid #215FF2;
+    outline: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.login__submit button:focus-visible {
+    background-color: #FFFFFF;
+    color: #215FF2;
+}
+
+@media (width <= 800px) {
+
+    .app__login {
+        width: 100%;
+        order: 1;
+        min-height: 100%;
+        padding: 1.2rem 0.4rem;
+    }
+
+}
+
+@media (width <= 600px) {
+
+    .login__main h1 {
+        font-size: 1.4rem;
+    }
+
+    .login__main input, .login__submit button {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.9rem;
+    }
+
+}

@@ -1,0 +1,19 @@
+.app__authentication {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    min-height: 100dvh;
+    padding: 0rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+@media (width <= 800px) {
+
+    .app__authentication {
+        flex-direction: column;
+    }
+}
