@@ -1,7 +1,9 @@
 import React from 'react'
-import styles from "./page.module.css";
-import PasswordInput from '@/components/PasswordInput/PasswordInput';
 import Link from 'next/link';
+import styles from "./page.module.css";
+
+// Components
+import PasswordInput from '@/components/PasswordInput/PasswordInput';
 
 const page = () => {
   

@@ -15,8 +15,8 @@ const PasswordInput = ({placeholder, label}: {placeholder: string, label: string
         <button type='button' title={showPassword ? 'Hide' : 'Show'} onClick={() => {setShowPassword(!showPassword)}}>
             {
                 showPassword ? 
-                <AiOutlineEyeInvisible fontSize={21} color="#686868"/> :
-                <AiOutlineEye fontSize={21} color="#686868"/>
+                <AiOutlineEyeInvisible fontSize={21}/> :
+                <AiOutlineEye fontSize={21}/>
             }
         </button>
     </div>
