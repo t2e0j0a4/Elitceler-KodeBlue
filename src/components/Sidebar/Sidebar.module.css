@@ -25,6 +25,16 @@
 
 .sidebar__top > a {
     width: 100%;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar__top > a:focus-visible {
+    outline: 2px solid #215FF2;
+    border-radius: 12px;
+    outline-offset: 4px;
 }
 
 .sidebar__top img {
