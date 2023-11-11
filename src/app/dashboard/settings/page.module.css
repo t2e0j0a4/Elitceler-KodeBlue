@@ -37,6 +37,7 @@
 }
 
 .account__details, .change__password, .account__options {
+    width: 100%;
     padding: 1rem 1.4rem;
     border: 1px solid #232323A0;
     height: 100%;
@@ -57,7 +58,6 @@
 }
 
 .details__input {
-    max-width: 100%;
     border: 1px solid #FFF;
     background-color: #FFF;
     padding: 0.6rem 0.6rem;
@@ -71,7 +71,6 @@
 }
 
 .input__group {
-
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -166,4 +165,40 @@
         padding: 1.2rem;
     }
 
+}
+
+@media all and (width <= 600px) {
+
+    .account__details, .change__password, .account__options {
+        padding: 0.8rem;
+    }
+
+    .account__details h3, .change__password h3, .account__options h3 {
+        padding: 0 0.4rem;
+    }
+
+    .account__details > button, .change__password button, .account__options button {
+        padding: 0.6rem 1rem;
+    }
+
+    .input__group input {
+        font-size: 0.98rem;
+        padding: 0.5rem;
+    }
+
+    .account__options {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .app__settings {
+        padding: 1rem 0.8rem;
+    }
+
+}
+
+@media all and (max-width: 450px) {
+    .details__main {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

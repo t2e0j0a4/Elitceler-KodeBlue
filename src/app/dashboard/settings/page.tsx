@@ -53,8 +53,8 @@ const page = () => {
 
                 <div className={account__options}>
                     <h3>Remove & Logout Account</h3>
-                    <button type='button'>Remove Account</button>
                     <button type='button'>Logout Account</button>
+                    <button type='button'>Remove Account</button>
                 </div>
 
                 {/* Account Options */}
