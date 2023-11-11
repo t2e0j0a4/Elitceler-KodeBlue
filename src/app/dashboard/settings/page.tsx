@@ -65,7 +65,7 @@ const page = () => {
     )
 }
 
-export const EachDetailsInput = ({label, placeholder, inputType = 'text'}: {label: string, placeholder: string, inputType?: 'email' | 'text'}) => {
+function EachDetailsInput ({label, placeholder, inputType = 'text'}: {label: string, placeholder: string, inputType?: 'email' | 'text'}) {
 
     const {details__input, input__group} = styles;
 
