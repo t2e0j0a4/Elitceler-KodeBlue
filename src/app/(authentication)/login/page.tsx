@@ -1,9 +1,15 @@
 import React from 'react'
 import Link from 'next/link';
+import { Metadata } from 'next';
 import styles from "./page.module.css";
 
 // Components
 import PasswordInput from '@/components/PasswordInput/PasswordInput';
+
+export const metadata: Metadata = {
+  title: 'Login | Kode Blue Technologies',
+  description: 'Login page of Kode Blue Technologies for Hospital Managements.'
+}
 
 const page = () => {
   

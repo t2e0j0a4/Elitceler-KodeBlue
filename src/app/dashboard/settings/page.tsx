@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./page.module.css";
+import { Metadata } from 'next';
 
 // React Icons
 import { BsPencilFill } from "react-icons/bs";
@@ -7,6 +8,11 @@ import { AiOutlineSetting } from "react-icons/ai";
 
 // Component
 import PasswordInput from '@/components/PasswordInput/PasswordInput';
+
+export const metadata: Metadata = {
+    title: 'Settings | Kode Blue Technologies',
+    description: "Settings Page of Kode Blue Technologies."
+}
 
 const page = () => {
 

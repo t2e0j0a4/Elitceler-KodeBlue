@@ -1,12 +1,18 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 import styles from "./page.module.css";
 
 // Components
 import PasswordInput from "@/components/PasswordInput/PasswordInput";
 
+export const metadata: Metadata = {
+  title: "Regsiter | Kode Blue Technologies",
+  description: "Regsiter page of Kode Blue Technologies for Hospital Managements.",
+};
+
 const page = () => {
-  const { app__register, register__main, register__pass, register__submit } = styles;
+  const { app__register, register__main, register__submit } = styles;
 
   return (
     <section className={app__register}>
