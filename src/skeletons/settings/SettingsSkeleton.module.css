@@ -59,7 +59,7 @@
 
 @keyframes loading {
     0% {
-        opacity: 1;
+        opacity: 0.8;
     }
 
     30% {
@@ -67,15 +67,15 @@
     }
 
     55% {
-        opacity: 0.7;
+        opacity: 0.72;
     }
 
     80% {
-        opacity: 0.65;
+        opacity: 0.45;
     }
 
     90% {
-        opacity: 0.7;
+        opacity: 0.6;
     }
 
     100% {
