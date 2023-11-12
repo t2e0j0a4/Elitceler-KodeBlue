@@ -1,0 +1,24 @@
+.current__case {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1.2rem;
+    padding-left: 260px;
+}
+
+@media all and (width <= 980px) {
+
+    .current__case {
+        padding: 1.2rem;
+    }
+
+}
+
+@media all and (width <= 600px) {
+
+    .current__case {
+        padding: 1rem 0.8rem;
+    }
+
+}
