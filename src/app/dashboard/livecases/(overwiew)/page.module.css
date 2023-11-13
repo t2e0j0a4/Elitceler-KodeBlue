@@ -1,7 +1,6 @@
 .dashboard__livecases {
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
     height: 100%;
     padding: 1.2rem;
     padding-left: 260px;
@@ -32,7 +31,7 @@
     margin-top: 1.6rem;
 
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(3, 300px);
     grid-template-rows: auto;
     place-content: start;
     gap: 1.6rem 1.2rem;
@@ -55,7 +54,23 @@
 
 }
 
-@media all and (width <= 640px) {
+@media all and (width <= 980px) {
+
+    .livecases__main {
+        grid-template-columns: repeat(3, 280px);
+    }
+
+}
+
+@media all and (width <= 900px) {
+
+    .livecases__main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media all and (width <= 600px) {
 
     .livecases__main {
         grid-template-columns: repeat(1, 100%);
