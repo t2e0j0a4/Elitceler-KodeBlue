@@ -24,8 +24,8 @@ const Sidebar = () => {
                 <Link href={"/"}><Image src="/others/DashboardLogo.svg" alt='Kode Blue' width={200} height={56}/></Link>
                 <ul className={sidebar__nav}>
                     <li><Link href={"/dashboard"} className={`${pathname === '/dashboard' && page__active}`} ><LuLayoutDashboard fontSize={20}/><span>Dashboard</span></Link></li>
-                    <li><Link href={"/dashboard/livecases"} className={`${pathname === '/dashboard/livecases' && page__active}`} ><FaStarOfLife fontSize={20}/><span>Live Cases</span></Link></li>
-                    <li><Link href={"/dashboard/staff"} className={`${pathname === '/dashboard/staff' && page__active}`} ><BsPersonAdd fontSize={20}/><span>Add Staff</span></Link></li>
+                    <li><Link href={"/dashboard/livecases"} className={`${pathname.includes('/dashboard/livecases') && page__active}`} ><FaStarOfLife fontSize={20}/><span>Live Cases</span></Link></li>
+                    <li><Link href={"/dashboard/staff"} className={`${pathname.includes('/dashboard/staff') && page__active}`} ><BsPersonAdd fontSize={20}/><span>Add Staff</span></Link></li>
                     <li><Link href={"/dashboard/settings"} className={`${pathname === '/dashboard/settings' && page__active}`} ><AiOutlineSetting fontSize={20}/><span>Settings</span></Link></li>
                 </ul>
             </div>

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styles from './page.module.css';
 
 // React Icons
 import { FaStarOfLife } from "react-icons/fa";
+
+// Skeletons
+import { EachCaseCard } from '@/skeletons/cases/CaseCardsSkeleton/CaseCards';
 
 // Components
 import LiveCaseCard from '@/components/LiveCaseCard/LiveCaseCard';
@@ -20,7 +23,9 @@ const page = () => {
             </div>
 
             <section className={livecases__main}>
-                <LiveCaseCard age={28} caseID='abc123' caseType='Heart Stroke' paymentType='Credit Card' gender='Male' />
+                <Suspense fallback={<EachCaseCard/>}>
+                    <LiveCaseCard age={28} caseID='abc123' caseType='Heart Stroke' paymentType='Credit Card' gender='Male' />
+                </Suspense>
             </section>
 
         </main>
