@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const page = ({params}: {params: { case: string }}) => {
 
-    const { current__case, case__head, head__side, head__talk, case__breadcrumb, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details } = styles;
+    const { current__case, case__head, head__side, head__talk, case__breadcrumb, livecase__main, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details, other__info } = styles;
 
     return (
         <main className={current__case}>
@@ -48,34 +48,40 @@ const page = ({params}: {params: { case: string }}) => {
                 <p>Case &#40;{params.case}&#41;</p>
             </div>
 
-            <section className={general__info}>
+            <main className={livecase__main}>
 
-                <section className={patient__info}>
-                    <div role='heading' aria-level={1} className={info__head}><CgBoy fontSize={24} color="#686868" /><p>John Doe</p></div>
-                    <div className={info__caseId}><p>Case ID</p><p>{params.case}</p></div>
+                <section className={general__info}>
+
+                    <section className={patient__info}>
+                        <div role='heading' aria-level={1} className={info__head}><CgBoy fontSize={24} color="#686868" /><p>John Doe</p></div>
+                        <div className={info__caseId}><p>Case ID</p><p>{params.case}</p></div>
+                    </section>
+
+                    <section className={patient__case}>
+                        <div role='heading' aria-level={2} className={general__title}><BiSolidUserRectangle fontSize={18} color="#215FFA"/><p>General Information</p></div>
+                        <div className={case__details}>
+                            <CardBodyDetail name='Age' value={24} />
+                            <CardBodyDetail name='Gender' value='Male' />
+                            <CardBodyDetail name='Case Type' value='Heart Stroke' />
+                        </div>
+                        <p>3.2km away. It will take 9 minutes 44 seconds to reach here.</p>
+                    </section>
+
+                    <section className={patient__vitals}>
+                        <div role='heading' aria-level={2} className={general__title}><BsHeartPulse fontSize={18} color="red"/><p>Vital Information</p></div>
+                        <div className={vitals__details}>
+                            <VitalInfoCard label='Blood Pressure' HeadIcon={BsArrowUpShort} VitalIcon={AiOutlineHeart} vitalInfo='180/120' infoOutput='Hypertensive Crisis' bgColor='#AD2E24' />
+                            <VitalInfoCard label='Heart Rate' HeadIcon={BsArrowDownShort} VitalIcon={IoIosPulse} vitalInfo='80 BPM' infoOutput='Normal' bgColor='#41CB68' />
+                            <VitalInfoCard label='SPO2' HeadIcon={BsArrowUpShort} VitalIcon={BsDropletHalf} vitalInfo='96%' infoOutput='Insufficient' bgColor='#FADA33' />
+                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
+                        </div>
+                    </section>
+
                 </section>
 
-                <section className={patient__case}>
-                    <div role='heading' aria-level={2} className={general__title}><BiSolidUserRectangle fontSize={18} color="#215FFA"/><p>General Information</p></div>
-                    <div className={case__details}>
-                        <CardBodyDetail name='Age' value={24} />
-                        <CardBodyDetail name='Gender' value='Male' />
-                        <CardBodyDetail name='Case Type' value='Heart Stroke' />
-                    </div>
-                    <p>3.2km away. It will take 9 minutes 44 seconds to reach here.</p>
-                </section>
+                <section className={other__info}></section>
 
-                <section className={patient__vitals}>
-                    <div role='heading' aria-level={2} className={general__title}><BsHeartPulse fontSize={18} color="red"/><p>Vital Information</p></div>
-                    <div className={vitals__details}>
-                        <VitalInfoCard label='Blood Pressure' HeadIcon={BsArrowUpShort} VitalIcon={AiOutlineHeart} vitalInfo='180/120' infoOutput='Hypertensive Crisis' bgColor='#AD2E24' />
-                        <VitalInfoCard label='Heart Rate' HeadIcon={BsArrowDownShort} VitalIcon={IoIosPulse} vitalInfo='80 BPM' infoOutput='Normal' bgColor='#41CB68' />
-                        <VitalInfoCard label='SPO2' HeadIcon={BsArrowUpShort} VitalIcon={BsDropletHalf} vitalInfo='96%' infoOutput='Insufficient' bgColor='#FADA33' />
-                        <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
-                    </div>
-                </section>
-
-            </section>
+            </main>
 
         </main>
     )

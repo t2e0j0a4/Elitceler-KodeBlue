@@ -145,10 +145,16 @@
 }
 
 
+.livecase__main {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+}
+
 /* General Info */
 
-.general__info {
-    width: 100%;
+.general__info, .other__info {
     max-width: 100%;
     height: 100%;
     border: 1.2px solid #686868;
@@ -249,7 +255,7 @@
 .vitals__details {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
     justify-content: start;
 }

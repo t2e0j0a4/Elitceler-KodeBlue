@@ -4,15 +4,12 @@
     height: 100%;
     padding: 1.2rem;
     padding-left: 252px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
     gap: 1rem;
 }
 
 .casecard__skeleton {
-    width: 258px;
     height: 100%;
     padding: 1.2rem;
     background-color: #ffffff4f;
