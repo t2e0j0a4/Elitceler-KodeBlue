@@ -22,4 +22,4 @@ const SettingsSkeleton = () => {
   )
 }
 
-export default SettingsSkeleton
+export default SettingsSkeleton;
