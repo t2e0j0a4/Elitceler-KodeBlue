@@ -1,11 +1,311 @@
 .current__case {
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
     height: 100%;
     padding: 1.2rem;
     padding-left: 260px;
 }
+
+.case__head {
+    width: 100%;
+    height: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.head__side {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+}
+
+.head__side a {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232323;
+    border: 1.2px solid #FFF;
+    border-radius: 50%;
+    padding: 0.2rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    outline: none;
+}
+
+.head__side p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.head__talk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.head__talk button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 18px;
+    font-family: inherit;  
+    outline: none;
+    color: #ffffff;
+    border: 1.2px solid transparent;
+    font-size: 0.86rem;
+    padding: 0.4rem 0.6rem;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.head__side a:focus-visible, .head__talk button:focus-visible {
+    background-color: transparent !important;
+    border-color: #215FFA;
+    color: #215FFA;
+}
+
+.case__breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2rem;
+    margin-top: 1rem;
+}
+
+.case__breadcrumb a {
+    border: 1.2px solid #215FFA;
+    font-size: 0.86rem;
+    padding: 0.4rem 0.6rem;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    background-color: #215FFA;
+    color: #FFF;
+    border-radius: 18px;
+    outline: none;
+    position: relative;
+    z-index: 2;
+}
+
+.case__breadcrumb a::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg) translateY(-68.5%);
+    right: 3.88px;
+    top: 50%;
+    z-index: -1;
+    border: 1.2px solid transparent;
+    background-color: #215FFA;
+    transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.case__breadcrumb p {
+    font-size: 0.95rem;
+    color: #313131;
+    padding-left: 0.8rem;
+    font-weight: 600;
+}
+
+.case__breadcrumb a:focus-visible  {
+    border-color: #215FFA;
+    color: #215FFA;
+    border-right: 1.2px solid transparent;
+    background-color: transparent;
+}
+
+.case__breadcrumb a:focus-visible::after {
+    background-color: transparent;
+    border-top: 1.28px solid #215FFA;
+    border-right: 1.28px solid #215FFA;
+}
+
+@media (pointer:fine) and (hover: hover) {
+    .case__breadcrumb a:hover  {
+        border-color: transparent;
+        color: #FFF;
+        background-color: #215FFA;
+    }
+
+    .case__breadcrumb a:hover::after {
+        background-color: #215FFA;
+        border: 1.2px solid transparent;
+    }
+}
+
+
+/* General Info */
+
+.general__info {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border: 1.2px solid #686868;
+    padding: 1.2rem;
+    border-radius: 24px;
+    margin-top: 1.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.4rem;
+}
+
+.patient__info, .patient__case, .patient__vitals {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.info__head, .info__caseId {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.info__head p {
+    font-size: 1.4rem;
+    color: #262626;
+    font-weight: 600;
+    text-align: left;
+}
+
+.info__caseId {
+    padding: 0.4rem 1.2rem;
+    border-radius: 18px;
+    border: 1px solid #215FFAA0;
+    background-color: #215efa49;
+    color: #000;
+}
+
+.info__caseId p:nth-child(1) {
+    border-right: 1.6px solid #232323;
+    padding-right: 0.6rem;
+    font-size: 0.9rem;
+    color: #484848;
+    text-align: center;
+}
+
+.info__caseId p:nth-child(2) {
+    font-size: 1rem;
+    color: #232323;
+    font-weight: 500;
+    text-align: center;
+}
+
+.patient__case {
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid #737373;
+}
+
+.general__title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.general__title p {
+    font-size: 1.1rem;
+    color: #232323;
+    text-align: left;
+}
+
+.case__details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.patient__case > p {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 24px;
+    border: 1px solid #215FFAA0;
+    background-color: #215efa81;
+    color: #000;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.vitals__details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    gap: 1rem;
+    justify-content: start;
+}
+
+.vitals__info {
+    padding: 0.2rem 0 0;
+    border-radius: 24px;
+    border: 1px solid #232323;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background-color: #FFF;
+}
+
+.vitalsInfo__head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.8rem;
+    border-bottom: 1px solid #484848;
+}
+
+.vitalsInfo__head p {
+    font-size: 0.9rem;
+    color: #404040;
+    text-align: left;
+    font-weight: 500;
+}
+
+.vitalsInfo__details {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 0.8rem;
+}
+
+.vitalsInfo__details p {
+    font-size: 1.6rem;
+    color: #686868;
+}
+
+.vitals__info > p {
+    width: 100%;
+    text-align: left;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0 0 24px 24px;
+    color: #FFF;
+    font-size: 0.9rem;
+}
+
+/* General Info */
+
 
 @media all and (width <= 980px) {
 
@@ -15,10 +315,18 @@
 
 }
 
-@media all and (width <= 600px) {
+@media all and (width <= 640px) {
 
     .current__case {
         padding: 1rem 0.8rem;
+    }
+
+    .head__talk {
+        display: none;
+    }
+
+    .general__info {
+        padding: 0.8rem;
     }
 
 }

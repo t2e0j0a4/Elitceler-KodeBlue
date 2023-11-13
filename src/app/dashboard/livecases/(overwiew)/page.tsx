@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React, { Suspense } from 'react'
 import styles from './page.module.css';
 
@@ -9,6 +10,11 @@ import { EachCaseCard } from '@/skeletons/cases/CaseCardsSkeleton/CaseCards';
 
 // Components
 import LiveCaseCard from '@/components/LiveCaseCard/LiveCaseCard';
+
+export const metadata: Metadata = {
+  title: "Live Cases | Kode Blue Technologies",
+  description: "All Live Cases of Current State.",
+};
 
 const page = () => {
 

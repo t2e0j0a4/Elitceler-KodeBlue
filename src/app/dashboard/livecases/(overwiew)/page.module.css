@@ -31,7 +31,7 @@
     margin-top: 1.6rem;
 
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto;
     place-content: start;
     gap: 1.6rem 1.2rem;
@@ -41,31 +41,6 @@
 
     .livecases__main {
         grid-template-columns: repeat(4, 280px);
-    }
-
-}
-
-@media all and (width <= 1272px) {
-
-    .livecases__main {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-    }
-
-}
-
-@media all and (width <= 980px) {
-
-    .livecases__main {
-        grid-template-columns: repeat(3, 280px);
-    }
-
-}
-
-@media all and (width <= 900px) {
-
-    .livecases__main {
-        grid-template-columns: repeat(2, 1fr);
     }
 
 }

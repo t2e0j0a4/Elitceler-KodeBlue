@@ -25,7 +25,7 @@ const LiveCaseCard = ({caseID, age, caseType, paymentType, gender}: LiveCaseType
     )
 }
 
-const CardBodyDetail = ({name, value}: {name: string, value: string | number}) => {
+export const CardBodyDetail = ({name, value}: {name: string, value: string | number}) => {
     return (
         <div className={styles.body__detail}>
             <p>{name}</p>

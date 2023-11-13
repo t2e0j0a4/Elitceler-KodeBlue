@@ -33,7 +33,7 @@
 
 .sidebar__top > a:focus-visible {
     outline: 2px solid #215FF2;
-    border-radius: 12px;
+    border-radius: 32px;
     outline-offset: 4px;
 }
 
@@ -67,7 +67,7 @@
     align-items: center;
     gap: 1rem;
     padding: 0.6rem 0.8rem;
-    border-radius: 12px;
+    border-radius: 32px;
     background-color: transparent;
     font-size: 1rem;
     color: #000000;
@@ -122,7 +122,7 @@
     align-items: center;
     gap: 1rem;
     padding: 0.6rem 0.8rem;
-    border-radius: 12px;
+    border-radius: 32px;
     font-family: inherit;
     font-weight: 500;
     background-color: transparent;
