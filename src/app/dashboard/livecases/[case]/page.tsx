@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Link from 'next/link';
 import { Metadata } from 'next';
 import styles from './page.module.css';
 
 // React Icons
 import { IconType } from 'react-icons';
-import { IoIosPulse } from "react-icons/io";
-import { FaStarOfLife } from 'react-icons/fa';
+import { CiLocationOn } from "react-icons/ci";
 import { CgBoy, CgGirl } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
-import { MdDocumentScanner } from "react-icons/md";
 import { FaTemperatureHalf } from "react-icons/fa6";
+import { IoIosPulse, IoMdEye } from "react-icons/io";
 import { BiSolidUserRectangle } from "react-icons/bi";
+import { FaStarOfLife, FaHandPaper } from "react-icons/fa";
 import { MdCall, MdOutlineAssignmentTurnedIn } from "react-icons/md";
+import { MdDocumentScanner, MdSpatialAudioOff } from "react-icons/md";
 import { CardBodyDetail } from '@/components/LiveCaseCard/LiveCaseCard';
 import { BsChatLeftText, BsHeartPulse, BsArrowDownShort, BsArrowUpShort, BsDropletHalf } from "react-icons/bs";
+
+// Skeletons
+import MapLoadSkeleton from '@/skeletons/cases/MapLoadSkeleton/MapLoadSkeleton';
 
 // Updated as a Dynamic Metadata if needed later, but as of now just a static Metadata
 export const metadata: Metadata = {
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
 
 const page = ({params}: {params: { case: string }}) => {
 
-    const { current__case, case__head, head__side, head__talk, case__breadcrumb, livecase__main, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details, other__info } = styles;
+    const { current__case, case__head, head__side, head__talk, case__breadcrumb, livecase__main, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details, other__info, paramedic__loc, paramedic__map, health__info, healthInfo__main } = styles;
 
     return (
         <main className={current__case}>
@@ -79,7 +83,30 @@ const page = ({params}: {params: { case: string }}) => {
 
                 </section>
 
-                <section className={other__info}></section>
+                <section className={other__info}>
+                    
+                    <section className={paramedic__loc}>
+                        <div role='heading' aria-level={2} className={general__title}><CiLocationOn fontSize={18} color="#215FFA"/><p>Paramedic Location</p></div>
+                        <Suspense fallback={<MapLoadSkeleton/>}>
+                            <div className={paramedic__map}>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11525.121488972181!2d78.96643550875214!3d16.010959768447595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb48c1241adb0e3%3A0x5c8ac521fa9f1f8c!2sNallamala%20Forest!5e1!3m2!1sen!2sin!4v1699970937012!5m2!1sen!2sin" style={{border: "0", width: '100%', height: 'auto', aspectRatio: '16/10', borderRadius: '12px' }} allowFullScreen loading="lazy"></iframe>
+                            </div>
+                        </Suspense>
+                    </section>
+
+                    <section className={health__info}>
+
+                        <GlucoMeter glucoScore={14} verdict='Healthy' />
+
+                        <div className={healthInfo__main}>
+                            <HealthDetailCard Icon={IoMdEye} iconColor='#65478F' label='Eye Response' count={2} countFor='Pressure'/>
+                            <HealthDetailCard Icon={MdSpatialAudioOff} iconColor='#30b7f5' label='Verbal Response' count={4} countFor='Confused'/>
+                            <HealthDetailCard Icon={FaHandPaper} iconColor='#a05efd' label='Motor Response' count={1} countFor='Confused'/>
+                        </div>
+
+                    </section>
+
+                </section>
 
             </main>
 
@@ -111,5 +138,30 @@ const VitalInfoCard = ({label, HeadIcon, VitalIcon, vitalInfo, infoOutput, bgCol
             </div>
             <p style={{ backgroundColor: bgColor}} >{infoOutput}</p>
         </article>
+    )
+}
+
+const HealthDetailCard = ({Icon, iconColor, label, count, countFor}: {Icon: IconType, iconColor: string, label: string, count: number, countFor: string }) => {
+    return (
+        <div className={styles.healthInfo__card}>
+            <Icon fontSize={21} color={iconColor} />
+            <p>{label}</p>
+            <div className={styles.healthInfo__detail}>
+                <p>{count}</p>
+                <p>{countFor}</p>
+            </div>
+        </div>
+    )
+}
+
+const GlucoMeter = ({glucoScore, verdict}: {glucoScore: number, verdict: string}) => {
+    return (
+        <div className={styles.gluco__meter}>
+            <p>Glasgow Coma Score (GCS)</p>
+            <div className={styles.glucoBar__box}>
+                <p style={{ color: `${glucoScore < 8 ? 'rgb(247, 65, 65)' : glucoScore < 11 ? 'rgb(250, 250, 56)' : 'rgb(78, 245, 78)'}` }}>{glucoScore < 10 ? `0${glucoScore}` : glucoScore}</p>
+                <span style={{ backgroundColor: `${glucoScore < 8 ? 'rgb(247, 65, 65)' : glucoScore < 11 ? 'rgb(250, 250, 56)' : 'rgb(78, 245, 78)'}` }}>{verdict}</span>
+            </div>
+        </div>
     )
 }
