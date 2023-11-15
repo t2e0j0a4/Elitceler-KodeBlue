@@ -25,7 +25,8 @@ const page = () => {
           <Link href={"/auth/forgotpassword"}>Forgot Password?</Link>
         </div>
         <div className={login__submit}>
-          <button type='submit'>Login</button>
+          {/* <button type='submit'>Login</button> */}
+          <Link href={"/dashboard"}>Login</Link>
           <p>New to Kode Blue? <Link href={"/register"}>Register.</Link></p>
         </div>
       </form>
