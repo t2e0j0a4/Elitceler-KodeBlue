@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 1440px;
     height: 100%;
+    margin: 0 auto;
     padding: 1.2rem;
     padding-left: 252px;
     display: grid;

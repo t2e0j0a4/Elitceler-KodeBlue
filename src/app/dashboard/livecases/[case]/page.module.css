@@ -1,6 +1,7 @@
 .current__case {
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
     min-height: 100vh;
     padding: 1.2rem;
     padding-left: 260px;
