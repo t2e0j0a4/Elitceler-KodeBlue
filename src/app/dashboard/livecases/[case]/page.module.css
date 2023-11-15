@@ -152,7 +152,7 @@
     display: grid;
     margin-top: 1.4rem;
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    grid-template-rows: auto;
+    grid-template-rows: repeat(auto-fit, minmax(640px, 1fr));
     justify-content: center;
     gap: 1rem;
 }
