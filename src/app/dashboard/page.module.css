@@ -14,8 +14,25 @@
     width: 100%;
     max-width: 100%;
     height: 100%;
+    padding-left: 240px;
+}
+
+.dashboard__head {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
     padding: 1.2rem;
-    padding-left: 252px;
+    background-color: #FFF;
+    border-left: 0.4px solid #48484856;
+    border-bottom: 0.4px solid #48484856;
+}
+
+.dashboard__head p {
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: left;
 }
 
 @media all and (width <= 980px) {
@@ -25,10 +42,6 @@
         flex-direction: column;
         gap: 0.4rem;
         position: static;
-    }
-    
-    .app__dashboard {
-        padding: 1.2rem;
     }
 
 }
