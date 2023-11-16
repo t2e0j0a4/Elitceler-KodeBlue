@@ -1,4 +1,4 @@
-.casecardSkeleton__main {
+.staffcardSkeleton__main {
     width: 100%;
     max-width: 1440px;
     height: 100%;
@@ -10,7 +10,7 @@
     gap: 1rem;
 }
 
-.casecard__skeleton {
+.staffcard__skeleton {
     height: 100%;
     padding: 1.2rem;
     background-color: #ffffff4f;
@@ -20,7 +20,7 @@
     border-radius: 24px;
 }
 
-.casecard__title {
+.staffcard__title {
     width: 80px;
     padding: 0.7rem;
     background-color: rgba(36, 36, 36, 0.042);
@@ -28,7 +28,7 @@
     position: relative;
 }
 
-.casecard__item {
+.staffcard__item {
     width: 100%;
     padding: 1.2rem;
     background-color: rgba(35, 35, 35, 0.031);
@@ -36,7 +36,7 @@
     position: relative;
 }
 
-.casecard__item::after, .casecard__title::after {
+.staffcard__item::after, .staffcard__title::after {
     content: "";
     position: absolute;
     top: 0;
@@ -48,11 +48,11 @@
     border-radius: inherit;
 }
 
-.casecard__title::after {
+.staffcard__title::after {
     animation: loading 1.2s infinite ease alternate;
 }
 
-.casecard__item::after {
+.staffcard__item::after {
     animation: loading 1.2s infinite 0.4s ease alternate;
 }
 
@@ -84,7 +84,7 @@
 
 @media all and (width <= 980px) {
 
-    .casecardSkeleton__main {
+    .staffcardSkeleton__main {
         padding: 1.2rem;
     }
 
@@ -92,11 +92,11 @@
 
 @media all and (width <= 600px) {
 
-    .casecardSkeleton__main {
+    .staffcardSkeleton__main {
         padding: 1rem 0.8rem;
     }
 
-    .casecard__skeleton {
+    .staffcard__skeleton {
         padding: 0.8rem;
     }
 

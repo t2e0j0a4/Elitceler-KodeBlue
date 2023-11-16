@@ -1,0 +1,74 @@
+.hospital__staff {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1.2rem;
+    padding-left: 260px;
+}
+
+.staff__head {
+    width: 100%;
+    height: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.staff__head a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    text-align: center;
+    background-color: transparent;
+    color: #232323;
+    border: 1.2px solid transparent;
+    border-radius: 50%;
+    outline: none;
+    transition: border 0.2s ease, color 0.2s ease;
+}
+
+.staff__deregister {
+    width: 100%;
+    margin-top: 1.6rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+    gap: 1rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .staff__head a:hover, .staff__head a:focus-visible {
+        border: 1.2px solid #215FFA;
+        color: #215FFA;
+    }
+}
+
+.staff__head p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #484848;
+    flex-grow: 1;
+}
+
+@media all and (width <= 980px) {
+
+    .hospital__staff {
+        padding: 1.2rem;
+    }
+
+}
+
+@media all and (width <= 600px) {
+
+    .hospital__staff {
+        padding: 1rem 0.8rem;
+    }
+
+}
