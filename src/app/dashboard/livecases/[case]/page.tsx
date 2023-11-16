@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react'
 import Link from 'next/link';
 import { Metadata } from 'next';
+import React, { Suspense } from 'react'
 import styles from './page.module.css';
 
 // React Icons
@@ -8,20 +8,16 @@ import { IconType } from 'react-icons';
 import { CiLocationOn } from "react-icons/ci";
 import { CgBoy, CgGirl } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
+import { MdSpatialAudioOff } from "react-icons/md";
 import { FaTemperatureHalf } from "react-icons/fa6";
 import { IoIosPulse, IoMdEye } from "react-icons/io";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaStarOfLife, FaHandPaper } from "react-icons/fa";
-import { MdCall, MdOutlineAssignmentTurnedIn } from "react-icons/md";
-import { MdDocumentScanner, MdSpatialAudioOff } from "react-icons/md";
 import { CardBodyDetail } from '@/components/LiveCaseCard/LiveCaseCard';
-import { BsChatLeftText, BsHeartPulse, BsArrowDownShort, BsArrowUpShort, BsDropletHalf } from "react-icons/bs";
-
-// Skeletons
-import MapLoadSkeleton from '@/skeletons/cases/MapLoadSkeleton/MapLoadSkeleton';
+import { BsHeartPulse, BsArrowDownShort, BsArrowUpShort, BsDropletHalf } from "react-icons/bs";
 
 // Components
-import Map from './Map';
+import HeadButton from '@/components/HeadButton/HeadButton';
 
 // Updated as a Dynamic Metadata if needed later, but as of now just a static Metadata
 export const metadata: Metadata = {
@@ -42,10 +38,10 @@ const page = ({params}: {params: { case: string }}) => {
                     <p>Live Cases</p>
                 </div>
                 <div className={head__talk}>
-                    <HeadButton label='Call' bgColor='#215FF2' Icon={MdCall} /> 
-                    <HeadButton label='Chat' bgColor='#215FF2' Icon={BsChatLeftText} /> 
-                    <HeadButton label='Documents' bgColor='#00CBFC' Icon={MdDocumentScanner} /> 
-                    <HeadButton label='Assign' bgColor='#3CC35E' Icon={MdOutlineAssignmentTurnedIn} /> 
+                    <HeadButton label='Call' bgColor='#215FF2' />
+                    <HeadButton label='Talk' bgColor='#215FF2' />
+                    <HeadButton label='Documents' bgColor='#00CBFC' />
+                    <HeadButton label='Assign' bgColor='#3CC35E' />
                 </div>
                 {/* Later on Adding Popup Box Detail for Each of above Contact Options. */}
             </div>
@@ -90,9 +86,9 @@ const page = ({params}: {params: { case: string }}) => {
                     
                     <section className={paramedic__loc}>
                         <div role='heading' aria-level={2} className={general__title}><CiLocationOn fontSize={18} color="#215FFA"/><p>Paramedic Location</p></div>
-                        <Suspense fallback={<MapLoadSkeleton/>}>
-                            <Map/>
-                        </Suspense>
+                        <div className={styles.paramedic__map}>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7754031622476!2d78.45028360915332!3d17.422562901725005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91cb1dc49e8f%3A0xbab6cb3473be057d!2sNims%20Hospital!5e0!3m2!1sen!2sin!4v1700117291954!5m2!1sen!2sin" style={{border: "0", width: '100%', height: 'auto', aspectRatio: '16/9', borderRadius: '12px' }} allowFullScreen loading="lazy"></iframe>
+                        </div>
                     </section>
 
                     <section className={health__info}>
@@ -116,15 +112,6 @@ const page = ({params}: {params: { case: string }}) => {
 }
 
 export default page;
-
-const HeadButton = ({bgColor, label, Icon}: { bgColor: string, label: string, Icon: IconType}) => {
-    return (
-        <button title={label} style={{ backgroundColor: bgColor }} type='button'>
-            <Icon fontSize={17}/>
-            <p>{label}</p>
-        </button>
-    )
-}
 
 const VitalInfoCard = ({label, HeadIcon, VitalIcon, vitalInfo, infoOutput, bgColor}: {label: string, HeadIcon: IconType, vitalInfo: string, VitalIcon: IconType, infoOutput: string, bgColor: string}) => {
     return (

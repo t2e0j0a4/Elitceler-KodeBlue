@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import styles from "./RegisterStaff.module.css";
 
@@ -15,8 +16,8 @@ const RegisterStaff = (details : StaffDetailType ) => {
     <article className={styles.register__card}>
         <StaffDetails {...details} />
         <div className={styles.can__register}>
-            <button type='button'>Accept</button>
-            <button type='button'>Reject</button>
+            <button type='button' onClick={() => {console.log('Accepted')}}>Accept</button>
+            <button type='button' onClick={() => {console.log('Rejected')}}>Reject</button>
         </div>
     </article>
   )
@@ -29,7 +30,7 @@ export const DeRegisterStaff = (details: StaffDetailType) => {
         <article className={styles.register__card}>
             <StaffDetails {...details} />
             <div className={styles.can__register}>
-                <button type='button'>Remove</button>
+                <button type='button' onClick={() => {console.log('Removed')}}>Remove</button>
             </div>
         </article>
     )

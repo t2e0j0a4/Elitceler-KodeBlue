@@ -21,7 +21,7 @@ const Sidebar = () => {
     return (
         <aside className={dashboard__sidebar}>
             <div className={sidebar__top}>
-                <Link href={"/"}><Image src="/others/DashboardLogo.svg" alt='Kode Blue' width={200} height={56}/></Link>
+                <Link href={"/"}><Image quality={65} priority={false} src="/others/DashboardLogo.svg" alt='Kode Blue' width={200} height={56}/></Link>
                 <ul className={sidebar__nav}>
                     <li><Link href={"/dashboard"} className={`${pathname === '/dashboard' && page__active}`} ><LuLayoutDashboard fontSize={20}/><span>Dashboard</span></Link></li>
                     <li><Link href={"/dashboard/livecases"} className={`${pathname.includes('/dashboard/livecases') && page__active}`} ><FaStarOfLife fontSize={20}/><span>Live Cases</span></Link></li>
