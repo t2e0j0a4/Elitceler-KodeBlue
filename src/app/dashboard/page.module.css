@@ -35,13 +35,60 @@
     text-align: left;
 }
 
+.dashboard__main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.dashboard__areas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    place-content: center;
+    gap: 1rem;
+}
+
+.dashboard__bars {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    place-content: center;
+    gap: 1rem;
+}
+
 @media all and (width <= 980px) {
 
     .dashboard__layout {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
         position: static;
     }
 
+    .app__dashboard {
+        padding: 0;
+    }
+
+    .dashboard__head {
+        border: none;
+        border-top: 0.4px solid #48484856;
+        box-shadow: 0 0 2px 0px #48484833;
+    }
+
+}
+
+@media all and (max-width : 600px) {
+    .dashboard__bars, .dashboard__areas {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.9rem;
+    }
 }
