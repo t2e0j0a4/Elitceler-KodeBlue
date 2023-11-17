@@ -84,6 +84,11 @@
 }
 
 @media all and (max-width : 600px) {
+
+    .dashboard__main {
+        padding: 1rem 0.8rem;
+    }
+    
     .dashboard__bars, .dashboard__areas {
         display: flex;
         flex-direction: column;
