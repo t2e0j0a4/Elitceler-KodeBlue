@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./CaseCards.module.css"
+import TitleBar from '@/skeletons/titlebar/TitleBar';
 
 export const EachCaseCard = () => {
     return (
@@ -14,11 +15,14 @@ export const EachCaseCard = () => {
 
 const CaseCards = () => {
   return (
-    <main className={styles.casecardSkeleton__main}>
-      <EachCaseCard />
-      <EachCaseCard />
-      <EachCaseCard />
-      <EachCaseCard />
+    <main className={styles.casecardSkeleton}>
+      <TitleBar/>
+      <div className={styles.casecardSkeleton__main}>
+        <EachCaseCard />
+        <EachCaseCard />
+        <EachCaseCard />
+        <EachCaseCard />
+      </div>
     </main>
   );
 }

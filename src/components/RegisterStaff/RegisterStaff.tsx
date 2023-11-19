@@ -2,14 +2,8 @@
 import React from 'react'
 import styles from "./RegisterStaff.module.css";
 
-interface StaffDetailType {
-    orgName: string,
-    username: string,
-    staffRole: string,
-    staffName: string,
-    mobileNumber: string,
-    emailAddress: string,
-}
+// Types
+import { StaffDetailType } from '@/types';
 
 const RegisterStaff = (details : StaffDetailType ) => {
   return (

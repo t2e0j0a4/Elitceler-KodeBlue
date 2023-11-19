@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./StaffCards.module.css";
+import TitleBar from "../titlebar/TitleBar";
 
 export const EachStaffCard = () => {
   return (
@@ -14,11 +15,14 @@ export const EachStaffCard = () => {
 
 const StaffCards = () => {
   return (
-    <main className={styles.staffcardSkeleton__main}>
+    <main className={styles.staffcardSkeleton}>
+      <TitleBar/>
+      <div className={styles.staffcardSkeleton__main}>
         <EachStaffCard/>
         <EachStaffCard/>
         <EachStaffCard/>
         <EachStaffCard/>
+      </div>
     </main>
   );
 };

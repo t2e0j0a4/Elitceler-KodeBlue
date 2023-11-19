@@ -1,1 +1,1 @@
-export interface AppContext {}
+export interface AppContextTypes {}

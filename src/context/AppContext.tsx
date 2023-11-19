@@ -1,8 +1,8 @@
 'use client';
 import { createContext } from "react";
-import { AppContext } from "@/types/Context";
+import { AppContextTypes } from "@/types/Context";
 
-const AppContext = createContext<AppContext | undefined>(undefined);
+const AppContext = createContext<AppContextTypes | undefined>(undefined);
 
 const AppState = ({ children }: { children: React.ReactNode }) => {
 

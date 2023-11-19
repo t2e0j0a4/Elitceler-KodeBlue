@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./SettingsSkeleton.module.css";
+import TitleBar from '../titlebar/TitleBar';
 
 const SingleSettingSkeleton = () => {
   return (
@@ -15,6 +16,7 @@ const SingleSettingSkeleton = () => {
 const SettingsSkeleton = () => {
   return (
     <main className={styles.settingSkeleton__main}>
+      <TitleBar/>
       <SingleSettingSkeleton />
       <SingleSettingSkeleton />
       <SingleSettingSkeleton />

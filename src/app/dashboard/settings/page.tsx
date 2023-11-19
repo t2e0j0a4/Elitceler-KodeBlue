@@ -6,10 +6,9 @@ import styles from "./page.module.css";
 import { AiOutlineSetting } from "react-icons/ai";
 
 // Component
-import PasswordInput from '@/components/PasswordInput/PasswordInput';
+import AccountDelete from './components/AccountDelete';
 import AccountDetails from './components/AccountDetails';
 import ChangePassword from './components/ChangePassword';
-import AccountDelete from './components/AccountDelete';
 
 export const metadata: Metadata = {
     title: 'Settings | Kode Blue Technologies',
