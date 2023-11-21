@@ -3,7 +3,7 @@ import React, { Suspense } from 'react'
 import styles from "./page.module.css";
 
 // React Icons
-import { IoArrowBackOutline } from "react-icons/io5";
+import { LuStethoscope } from "react-icons/lu";
 
 // Skeleton
 import { EachStaffCard } from '@/skeletons/staff/StaffCards';
@@ -19,7 +19,7 @@ const page = () => {
         <main className={hospital__staff}>
             
             <div className={staff__head}>
-                <Link href={"/dashboard/staff"} title="Staff"><IoArrowBackOutline fontSize={20} fontWeight={500} aria-hidden/></Link>
+                <LuStethoscope fontSize={20} color="#484848" />
                 <p>Hospital Staff</p>
             </div>
 

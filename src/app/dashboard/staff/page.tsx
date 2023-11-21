@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from "./page.module.css";
 
 // React Icons
-import { CiStethoscope } from "react-icons/ci";
 import { MdOutlineAddHome } from "react-icons/md";
 
 // Components
@@ -22,7 +21,6 @@ const page = () => {
         <div className={staff__head}>
             <MdOutlineAddHome fontSize={24} color="#484848" />
             <p>Staff</p>
-            <Link href={"/dashboard/staff/hospital"}><CiStethoscope fontSize={20} fontWeight={500}/> Hospital Staff</Link>
         </div>
 
         <section className={doctor__register}>

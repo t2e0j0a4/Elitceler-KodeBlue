@@ -17,7 +17,7 @@
 .staff__head {
     width: 100%;
     height: 100%;
-    padding: 0.46rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 32px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     background-color: #FFF;
@@ -31,10 +31,9 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: #484848;
-    flex-grow: 1;
 }
 
-.staff__head a {
+/* .staff__head a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +55,7 @@
         background-color: #FFF;
         color: #215FFA;
     }
-}
+} */
 
 .doctor__register, .paramedic__register {
     margin-top: 1.8rem;
