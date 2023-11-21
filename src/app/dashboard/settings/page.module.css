@@ -57,25 +57,18 @@
     gap: 1.2rem;
 }
 
-.details__input {
-    border: 1px solid #FFF;
+.input__group {
+    border: 1.2px solid #FFF;
     background-color: #FFF;
     padding: 0.6rem 0.6rem;
     border-radius: 18px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.input__group {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
     justify-content: flex-start;
+    transition: border 0.2s ease-in-out;
 }
 
 .input__group label {
@@ -89,20 +82,23 @@
     padding: 0.4rem 0.6rem;
     border-radius: 8px;
     width: 96%;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     border: 1.2px solid transparent;
     outline: none;
     font-family: inherit;
-    transition: color 0.1s ease, border 0.1s ease, background-color 0.1s ease;
+    transition: color 0.2s ease-in-out;
 }
 
-.input__group input:focus, .input__group input:focus-visible {
+.input__group:focus-within {
     border: 1.2px solid #215FF2;
+}
+
+.input__group:focus-within input {
     color: #215FF2;
 }
 
-.input__group input:focus::placeholder {
-    color: #2160f2ab;
+.input__group:focus-within input::placeholder {
+    color: #2160f28a;
 }
 
 .details__input button {
