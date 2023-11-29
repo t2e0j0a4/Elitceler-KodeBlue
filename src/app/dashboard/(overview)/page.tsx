@@ -10,6 +10,7 @@ import { CiStethoscope } from "react-icons/ci";
 import { LiaAmbulanceSolid } from "react-icons/lia";
 
 // Components
+import RefreshHint from './RefreshHint';
 import DashboardBar from '@/components/DashboardBar/DashboardBar';
 import DashboardArea from '@/components/DashboardArea/DashboardArea';
 
@@ -22,6 +23,7 @@ const page = () => {
 
       <div className={dashboard__head}>
         <p>Hello, Hospital Name 👋</p>
+        <RefreshHint/>
       </div>
 
       <main className={dashboard__main}>
@@ -44,4 +46,4 @@ const page = () => {
   )
 }
 
-export default page
+export default page;

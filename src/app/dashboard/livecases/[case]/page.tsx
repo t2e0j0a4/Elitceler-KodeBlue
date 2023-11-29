@@ -11,13 +11,14 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { MdSpatialAudioOff } from "react-icons/md";
 import { FaTemperatureHalf } from "react-icons/fa6";
 import { IoIosPulse, IoMdEye } from "react-icons/io";
+import { IoArrowBackOutline } from "react-icons/io5";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaStarOfLife, FaHandPaper } from "react-icons/fa";
 import { CardBodyDetail } from '@/components/LiveCaseCard/LiveCaseCard';
 import { BsHeartPulse, BsArrowDownShort, BsArrowUpShort, BsDropletHalf } from "react-icons/bs";
 
 // Components
-import HeadButton from '@/components/HeadButton/HeadButton';
+import CaseContactOptions from '@/components/CaseContactOptions/CaseContactOptions';
 
 // Updated as a Dynamic Metadata if needed later, but as of now just a static Metadata
 export const metadata: Metadata = {
@@ -34,25 +35,23 @@ const page = ({params}: {params: { case: string }}) => {
 
             <div className={case__head}>
                 <div className={head__side}>
-                    <FaStarOfLife fontSize={21} color={'#232323'}/>
-                    <p>Live Cases</p>
+                    <Link href="/dashboard/staff">
+                        <IoArrowBackOutline fontSize={21}/>
+                    </Link>
+                    <p>Case Details</p>
                 </div>
                 <div className={head__talk}>
-                    <HeadButton label='Talk' bgColor='#215FF2' />
-                    <HeadButton label='Documents' bgColor='#00CBFC' />
-                    <HeadButton label='Assign' bgColor='#3CC35E' />
+                    <CaseContactOptions/>
                 </div>
-                {/* Later on Adding Popup Box Detail for Each of above Contact Options. */}
             </div>
 
-            <div className={case__breadcrumb}>
-                <Link href={"/dashboard/livecases"}>Cases</Link>
-                <p>Case &#40;{params.case}&#41;</p>
-            </div>
+            {/* Removed 1 */}
 
-            <main className={livecase__main}>
+            {/* General & Vitals Information */}
 
-                <section className={general__info}>
+            <section className={livecase__main}>
+
+                <div className={general__info}>
 
                     <section className={patient__info}>
                         <div role='heading' aria-level={1} className={info__head}><CgBoy fontSize={24} color="#686868" /><p>John Doe</p></div>
@@ -66,7 +65,7 @@ const page = ({params}: {params: { case: string }}) => {
                             <CardBodyDetail name='Gender' value='Male' />
                             <CardBodyDetail name='Case Type' value='Heart Stroke' />
                         </div>
-                        <p>3.2km away. It will take 9 minutes 44 seconds to reach here.</p>
+                        <p>3.2 km away. It will take 9 minutes 44 seconds to reach here.</p>
                     </section>
 
                     <section className={patient__vitals}>
@@ -79,32 +78,33 @@ const page = ({params}: {params: { case: string }}) => {
                         </div>
                     </section>
 
-                </section>
+                </div>
 
-                <section className={other__info}>
+                <div className={other__info}>
+
+                    {/* We are gonna include charts representing vitals info soon... */}
                     
-                    <section className={paramedic__loc}>
-                        <div role='heading' aria-level={2} className={general__title}><CiLocationOn fontSize={18} color="#215FFA"/><p>Paramedic Location</p></div>
-                        <div className={paramedic__map}>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7754031622476!2d78.45028360915332!3d17.422562901725005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91cb1dc49e8f%3A0xbab6cb3473be057d!2sNims%20Hospital!5e0!3m2!1sen!2sin!4v1700117291954!5m2!1sen!2sin" style={{border: "0", width: '100%', height: 'auto', aspectRatio: '16/9', borderRadius: '12px' }} allowFullScreen loading="lazy"></iframe>
-                        </div>
-                    </section>
-
                     <section className={health__info}>
 
                         <GlucoMeter glucoScore={14} verdict='Healthy' />
-
-                        <div className={healthInfo__main}>
-                            <HealthDetailCard Icon={IoMdEye} iconColor='#65478F' label='Eye Response' count={2} countFor='Pressure'/>
-                            <HealthDetailCard Icon={MdSpatialAudioOff} iconColor='#30b7f5' label='Verbal Response' count={4} countFor='Confused'/>
-                            <HealthDetailCard Icon={FaHandPaper} iconColor='#a05efd' label='Motor Response' count={1} countFor='Confused'/>
-                        </div>
+                        <HealthDetailCard Icon={IoMdEye} iconColor='#65478F' label='Eye Response' count={2} countFor='Pressure'/>
+                        <HealthDetailCard Icon={MdSpatialAudioOff} iconColor='#30b7f5' label='Verbal Response' count={4} countFor='Confused'/>
+                        <HealthDetailCard Icon={FaHandPaper} iconColor='#a05efd' label='Motor Response' count={1} countFor='Confused'/>
 
                     </section>
 
-                </section>
+                </div>
 
-            </main>
+            </section>
+
+            {/* Paramedic Location */}
+
+            <section className={paramedic__loc}>
+                <div role='heading' aria-level={2} className={general__title}><CiLocationOn fontSize={18} color="#215FFA"/><p>Paramedic Location</p></div>
+                <div className={paramedic__map}>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7754031622476!2d78.45028360915332!3d17.422562901725005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91cb1dc49e8f%3A0xbab6cb3473be057d!2sNims%20Hospital!5e0!3m2!1sen!2sin!4v1700117291954!5m2!1sen!2sin" style={{border: "0", width: '100%', height: '100%', borderRadius: '12px', outline: 'none' }} allowFullScreen loading="lazy"></iframe>
+                </div>
+            </section>
 
         </main>
     )
@@ -152,3 +152,13 @@ const GlucoMeter = ({glucoScore, verdict}: {glucoScore: number, verdict: string}
         </div>
     )
 }
+
+
+// *************************************** Removed Changes **************************************
+
+// Removed 1
+
+{/* <div className={case__breadcrumb}>
+    <Link href={"/dashboard/livecases"}>Cases</Link>
+    <p>Case &#40;{params.case}&#41;</p>
+</div> */}

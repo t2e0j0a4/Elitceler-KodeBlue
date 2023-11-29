@@ -32,7 +32,7 @@
     margin-top: 1.6rem;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: auto;
     place-content: start;
     gap: 1.6rem 1.2rem;

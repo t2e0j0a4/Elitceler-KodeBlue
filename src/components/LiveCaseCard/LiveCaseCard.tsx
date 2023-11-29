@@ -13,7 +13,7 @@ const LiveCaseCard = ({caseID, age, caseType, paymentType, gender}: LiveCaseType
         <article className={livecase__card}>
             <div className={card__head}>
                 <p>Case ID</p>
-                <Link href={`/dashboard/livecases/${caseID}`}>{caseID}</Link>
+                <Link href={`/dashboard/livecases/${caseID}`}>View Case</Link>
             </div>
             <div className={card__body}>
                 <CardBodyDetail name='Gender' value={gender} />

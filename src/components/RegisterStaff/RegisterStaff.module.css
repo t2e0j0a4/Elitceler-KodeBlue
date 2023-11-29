@@ -1,6 +1,8 @@
 .register__card {
-    padding: 0.6rem;
-    border: 1.2px solid #232323;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #48484820;
+    background-color: #FFF;
+    box-shadow: 0 1px 4px 2px #2323231f;
     border-radius: 21px;
     display: flex;
     flex-direction: column;
@@ -50,7 +52,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
-    border: 1px solid #7e7e7e;
+    border: 1px solid rgba(118, 118, 128, 0.268);
     padding: 0.4rem 0.4rem;
     border-radius: 12px;
     gap: 0.3rem;

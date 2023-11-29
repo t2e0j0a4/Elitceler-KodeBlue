@@ -3,8 +3,9 @@
     height: 100%;
     padding: 1rem;
     border-radius: 32px;
-    border: 1px solid #484848;
+    border: 1px solid #48484820;
     background-color: #FFF;
+    box-shadow: 0 1px 4px 2px #2323231f;
 
     display: flex;
     flex-direction: column;
@@ -23,14 +24,14 @@
 
 .card__head p {
     font-size: 1.2rem;
-    color: #686868;
+    color: #767680;
     font-weight: 500;
     text-align: left;
 }
 
 .card__head a {
-    border-radius: 16px;
-    padding: 0.2rem 0.6rem;
+    border-radius: 18px;
+    padding: 0.3rem 0.8rem;
     font-size: 1rem;
     font-family: inherit;
     background-color: #215FF2;
@@ -68,9 +69,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
+    border-radius: 12px;
     gap: 0.5rem;
-    border: 0.7px solid #48484838;
+    border: 0.7px solid #48484824;
 }
 
 .body__detail p:nth-child(1) {

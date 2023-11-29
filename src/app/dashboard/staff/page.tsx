@@ -20,7 +20,7 @@ const page = () => {
       
         <div className={staff__head}>
             <MdOutlineAddHome fontSize={24} color="#484848" />
-            <p>Staff</p>
+            <p>Add Staff</p>
         </div>
 
         <section className={doctor__register}>
