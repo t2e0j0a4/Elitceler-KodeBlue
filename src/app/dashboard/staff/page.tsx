@@ -12,7 +12,7 @@ import RegisterStaff from '@/components/RegisterStaff/RegisterStaff';
 import { EachStaffCard } from '@/skeletons/staff/StaffCards';
 import ToggleStaffOption from '@/components/ToggleStaffOption/ToggleStaffOption';
 
-const page = () => {
+const page = ({ searchParams }: {searchParams: {staffType: string}}) => {
 
     const { app__staff, staff__head, doctor__register, register__all, paramedic__register } = styles;
 
@@ -27,42 +27,45 @@ const page = () => {
         {/* We are adding a Tab view here for Registrations - Doctor and Paramedics */}
         <ToggleStaffOption/>
 
-        <section className={doctor__register}>
-            <h2>Doctor Registration</h2>
-            <div className={register__all}>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-            </div>
-        </section>
-
-        <section className={paramedic__register}>
-            <h2>Paramedic Registration</h2>
-            <div className={register__all}>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-            </div>
-        </section>
-
+        {
+            searchParams.staffType === 'doctors' ? (
+                <section className={doctor__register}>
+                    <h2>Doctor Registration</h2>
+                    <div className={register__all}>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                    </div>
+                </section>
+            ) : (
+                <section className={paramedic__register}>
+                    <h2>Paramedic Registration</h2>
+                    <div className={register__all}>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                        <Suspense fallback={<EachStaffCard/>}>
+                            <RegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                        </Suspense>
+                    </div>
+                </section>
+            )
+        }
 
     </main>
   );

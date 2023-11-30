@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 1.5rem;
 }
 
@@ -16,9 +16,11 @@
     border-bottom: 1.8px solid transparent;
     transition: color 0.3s ease-in-out;
     position: relative;
+    outline: none;
+    color: #686868;
 }
 
-.staff__toggle button.active {
+.staff__toggle button.staff__active {
     color: #215FFA;
 }
 
@@ -28,11 +30,22 @@
     bottom: 0;
     width: 0;
     height: 1.8px;
-    left: 0;
     background-color: #215FFA;
     transition: width 0.3s ease-in-out;
 }
 
-.staff__toggle button.active::after {
+.staff__toggle button:nth-child(1):after {
+    right: 0;
+}
+
+.staff__toggle button:nth-child(2):after {
+    left: 0;
+}
+
+.staff__toggle button.staff__active::after {
     width: 100%;
+}
+
+.staff__toggle button:hover, .staff__toggle button:focus-visible {
+    color: #215FFA;
 }

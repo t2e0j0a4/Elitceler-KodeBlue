@@ -10,8 +10,9 @@ import { EachStaffCard } from '@/skeletons/staff/StaffCards';
 
 // Components
 import { DeRegisterStaff } from '@/components/RegisterStaff/RegisterStaff';
+import ToggleStaffOption from '@/components/ToggleStaffOption/ToggleStaffOption';
 
-const page = () => {
+const page = ({searchParams}: {searchParams: {staffType: string}}) => {
 
     const { hospital__staff, staff__head, staff__deregister } = styles;
 
@@ -23,19 +24,36 @@ const page = () => {
                 <p>Hospital Staff</p>
             </div>
 
+            <ToggleStaffOption/>
+
             <section className={staff__deregister}>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
-                <Suspense fallback={<EachStaffCard/>}>
-                    <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
-                </Suspense>
+                {
+                    searchParams.staffType === 'doctors' ? (
+                        <>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                        </>
+                    ) : (
+                        <>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                        </>
+                    )
+                }
             </section>
 
         </main>
