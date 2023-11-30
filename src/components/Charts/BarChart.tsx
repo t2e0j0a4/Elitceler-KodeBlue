@@ -15,6 +15,7 @@ export default function BarChart({bgColor, label}: {bgColor: string, label: stri
     responsive: true,
     plugins: {
       legend: {
+        display: false,
         position: "top" as const,
         labels : {
           font: {

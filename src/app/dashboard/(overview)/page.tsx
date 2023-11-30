@@ -13,10 +13,11 @@ import { LiaAmbulanceSolid } from "react-icons/lia";
 import RefreshHint from './RefreshHint';
 import DashboardBar from '@/components/DashboardBar/DashboardBar';
 import DashboardArea from '@/components/DashboardArea/DashboardArea';
+import BedCount from '@/components/BedCount/BedCount';
 
 const page = () => {
 
-  const { app__dashboard, dashboard__head, dashboard__main, dashboard__areas, dashboard__bars } = styles;
+  const { app__dashboard, dashboard__head, dashboard__main, dashboard__areas, area__charts, bed__count, dashboard__bars } = styles;
 
   return (
     <main className={app__dashboard}>
@@ -33,6 +34,10 @@ const page = () => {
           <DashboardArea Icon={LiaAmbulanceSolid} aboutCases='Registered Paramedics' caseCount={100} chartLabel='Paramedics' bgColor='rgba(255, 137, 125, 0.30)' borderColor='#FF897D' />
           <DashboardArea Icon={FaHandPaper} aboutCases='Cases Handled Till Date' caseCount={200} chartLabel='Cases' bgColor='rgba(0, 60, 173, 0.30)' borderColor='#003CAD' />
           <DashboardArea Icon={CiStethoscope} aboutCases='Registered Doctors' caseCount={50} chartLabel='Doctors' bgColor='rgba(142, 167, 255, 0.30)' borderColor='#8EA7FF' />
+          {/* <div className={bed__count}>
+            <BedCount bedsFor='Total' bedsCount={48}/>
+            <BedCount bedsFor='Used' bedsCount={24}/>
+          </div> */}
         </section>
 
         <section className={dashboard__bars}>

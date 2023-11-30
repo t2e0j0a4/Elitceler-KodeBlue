@@ -78,9 +78,26 @@
 .dashboard__areas {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     place-content: center;
     gap: 1rem;
+}
+
+@media all and (min-width: 1360px) {
+    .dashboard__areas {
+        grid-template-rows: 264px 264px;        
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.bed__count {
+    display: none;
+}
+
+@media all and (min-width: 1360px) {
+    .bed__count {
+        display: flex;
+    }
 }
 
 .dashboard__bars {
