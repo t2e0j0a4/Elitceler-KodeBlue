@@ -10,6 +10,7 @@ import RegisterStaff from '@/components/RegisterStaff/RegisterStaff';
 
 // Skeletons
 import { EachStaffCard } from '@/skeletons/staff/StaffCards';
+import ToggleStaffOption from '@/components/ToggleStaffOption/ToggleStaffOption';
 
 const page = () => {
 
@@ -22,6 +23,9 @@ const page = () => {
             <MdOutlineAddHome fontSize={24} color="#484848" />
             <p>Add Staff</p>
         </div>
+
+        {/* We are adding a Tab view here for Registrations - Doctor and Paramedics */}
+        <ToggleStaffOption/>
 
         <section className={doctor__register}>
             <h2>Doctor Registration</h2>

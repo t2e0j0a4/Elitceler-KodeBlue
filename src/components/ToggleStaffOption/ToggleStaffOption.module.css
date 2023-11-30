@@ -1,0 +1,38 @@
+.staff__toggle {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+}
+
+.staff__toggle button {
+    padding: 0.5rem 0.8rem;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border-bottom: 1.8px solid transparent;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+.staff__toggle button.active {
+    color: #215FFA;
+}
+
+.staff__toggle button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1.8px;
+    left: 0;
+    background-color: #215FFA;
+    transition: width 0.3s ease-in-out;
+}
+
+.staff__toggle button.active::after {
+    width: 100%;
+}
