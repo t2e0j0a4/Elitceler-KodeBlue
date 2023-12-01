@@ -21,7 +21,7 @@ const PasswordInput = ({placeholder, label}: {placeholder: string, label: string
       <div className={styles.password__group}>
           <input type={showPassword ? "text" : "password"} placeholder={placeholder} aria-labelledby={label} onChange={(e) => {
             isPasswordValid(e.target.value);
-          }} />
+          }} onBlur={() => {setShowPassError(true)}} onFocus={(e) => {isPasswordValid(e.target.value)}} />
           <button type='button' title={showPassword ? 'Hide' : 'Show'} onClick={() => {setShowPassword(!showPassword)}}>
               {
                 showPassword ? 
