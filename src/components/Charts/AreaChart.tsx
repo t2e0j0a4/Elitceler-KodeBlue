@@ -2,7 +2,7 @@
 import React from "react";
 
 // Chartjs
-import { Chart } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 import {
   Chart as ChartJS,
@@ -64,5 +64,5 @@ export default function AreaChart({
 
   };
 
-  return <Chart type="line" options={options} data={data} />;
+  return <Line options={options} data={data} />;
 }
