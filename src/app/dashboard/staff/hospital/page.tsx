@@ -39,9 +39,21 @@ const page = ({searchParams}: {searchParams: {staffType: string}}) => {
                             <Suspense fallback={<EachStaffCard/>}>
                                 <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
                             </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='Dr' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
                         </>
                     ) : (
                         <>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
+                            <Suspense fallback={<EachStaffCard/>}>
+                                <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
+                            </Suspense>
                             <Suspense fallback={<EachStaffCard/>}>
                                 <DeRegisterStaff staffRole='EMT' staffName='John Doe' orgName='Nims Hospital' username='john123' emailAddress='johndoe12@mail.com' mobileNumber='9999999999' />
                             </Suspense>
