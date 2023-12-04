@@ -35,7 +35,7 @@ const page = ({params}: {params: { case: string }}) => {
 
             <div className={case__head}>
                 <div className={head__side}>
-                    <Link href="/dashboard/staff">
+                    <Link href="/dashboard/livecases">
                         <IoArrowBackOutline fontSize={21}/>
                     </Link>
                     <p>Case Details</p>
@@ -61,9 +61,9 @@ const page = ({params}: {params: { case: string }}) => {
                     <section className={patient__case}>
                         <div role='heading' aria-level={2} className={general__title}><BiSolidUserRectangle fontSize={18} color="#215FFA"/><p>General Information</p></div>
                         <div className={case__details}>
-                            <CardBodyDetail name='Age' value={24} />
-                            <CardBodyDetail name='Gender' value='Male' />
-                            <CardBodyDetail name='Case Type' value='Heart Stroke' />
+                            <CardBodyDetail name='Age' value={24} bgColor="#FFF"/>
+                            <CardBodyDetail name='Gender' value='Male' bgColor="#FFF"/>
+                            <CardBodyDetail name='Case Type' value='Heart Stroke' bgColor="#FFF"/>
                         </div>
                         <p>3.2 km away. It will take 9 minutes 44 seconds to reach here.</p>
                     </section>
@@ -74,6 +74,9 @@ const page = ({params}: {params: { case: string }}) => {
                             <VitalInfoCard label='Blood Pressure' HeadIcon={BsArrowUpShort} VitalIcon={AiOutlineHeart} vitalInfo='180/120' infoOutput='Hypertensive Crisis' bgColor='#AD2E24' />
                             <VitalInfoCard label='Heart Rate' HeadIcon={BsArrowDownShort} VitalIcon={IoIosPulse} vitalInfo='80 BPM' infoOutput='Normal' bgColor='#41CB68' />
                             <VitalInfoCard label='SPO2' HeadIcon={BsArrowUpShort} VitalIcon={BsDropletHalf} vitalInfo='96%' infoOutput='Insufficient' bgColor='#FADA33' />
+                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
+                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
+                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
                             <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
                         </div>
                     </section>

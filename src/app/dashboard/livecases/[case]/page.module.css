@@ -1,6 +1,6 @@
 .current__case {
     width: 100%;
-    max-width: 1440px;
+    max-width: 2000px;
     margin: 0 auto;
     min-height: 100vh;
     padding: 1.2rem;
@@ -152,16 +152,9 @@
     display: grid;
     margin-top: 1.4rem;
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    grid-template-rows: 650px;
     justify-content: center;
-    gap: 0.4rem;
-}
-
-@media all and (min-width: 1350px) {
-    
-    .livecase__main{
-        grid-template-rows: 660px;
-    }
+    grid-template-rows: auto;
+    gap: 1.2rem;
 }
 
 @media all and (width <= 1250px) {
@@ -175,11 +168,11 @@
 
 .general__info, .other__info {
     max-width: 100%;
-    height: 100%;
-    border: 1.2px solid #686868af;
-    box-shadow: 0 1px 4px 1px #23232304;
+    /* border: 1.2px solid #6868682d;
+    box-shadow: 0 1px 4px 1px rgba(35, 35, 35, 0.046); */
     padding: 0.8rem 1.2rem;
     border-radius: 24px;
+    background-color: transparent;
 
     display: flex;
     flex-direction: column;
@@ -246,7 +239,7 @@
 }
 
 .general__title p {
-    font-size: 1.06rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #383838;
     text-align: left;
@@ -266,26 +259,45 @@
     padding: 0.6rem;
     border-radius: 24px;
     border: 1px solid #215FFAA0;
-    background-color: #215efa81;
-    color: #000;
-    font-size: 0.88rem;
+    background-color: #215FF2;
+    color: #FFF;
+    font-size: 0.80rem;
     text-align: center;
 }
 
 .vitals__details {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
+    grid-template-rows: auto;
     justify-content: start;
 }
 
+@media all and (max-width: 1500px) {
+    .vitals__details {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+.vitals__details .vitals__info:last-child {
+    grid-column: 1/3;
+}
+
+@media all and (max-width: 1252px) {
+    .vitals__details .vitals__info:last-child {
+        grid-column: 1/2;
+    }
+}
+
 .vitals__info {
-    padding: 0.4rem 0 0;
+    padding: 0.4rem 0 0.6rem;
     border-radius: 18px;
     box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.213);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 0.6rem;
     background-color: #FFF;
 }
@@ -296,13 +308,13 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    border-bottom: 1px solid #484848;
+    padding: 0.2rem 0.8rem;
+    border-bottom: 1px solid #48484833;
 }
 
 .vitalsInfo__head p {
     font-size: 0.9rem;
-    color: #404040;
+    color: #767680;
     text-align: left;
     font-weight: 500;
 }
@@ -322,12 +334,12 @@
 }
 
 .vitals__info > p {
-    width: 100%;
+    width: 95%;
     text-align: left;
     padding: 0.4rem 0.8rem;
-    border-radius: 0 0 18px 18px;
+    border-radius: 24px 24px;
     color: #FFF;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 .paramedic__loc {
@@ -337,7 +349,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.8rem;
-    margin-top: 1.8rem;
+    margin-top: 1.6rem;
     outline: none;
 }
 
@@ -349,13 +361,23 @@
     height: auto;
     aspect-ratio: 3/1;
     border-radius: 12px;
-    border: 1px solid #68686877;
+    padding: 0.4rem;
+    background-color: #ffffffc1;
+    border: 1px solid #68686840;
+    box-shadow: 0 2px 4px 1px #23232315;
     outline: none;
     position: relative;
     z-index: 10;
 }
 
-.paramedic__map::before {
+.paramedic__map iframe {
+    position: relative;
+    width: 100%;
+    outline: none !important;
+    height: 100%;
+}
+
+.paramedic__map iframe::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -364,6 +386,8 @@
     background: linear-gradient(45deg, rgba(35, 35, 35, 0.495), transparent, rgba(93, 93, 93, 0.131));
     animation: load 2s infinite ease alternate;
     z-index: -1;
+    left: 0;
+    top: 0;
     outline: none;
 }
 
@@ -397,6 +421,12 @@
     padding: 0.4rem 0;
 }
 
+@media all and (min-width: 1500px) {
+    .health__info {
+        gap: 1.2rem;
+    }
+}
+
 .gluco__meter {
     grid-row: 1/4;
     background-color: #FFF;
@@ -404,6 +434,7 @@
     padding: 1.2rem 0.8rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 1.2rem;
     box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.213);
 }
@@ -411,7 +442,7 @@
 .gluco__meter > p {
     width: 100%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #484848;
 }
@@ -474,10 +505,10 @@
 .healthInfo__detail {
     flex-grow: 1;
     display: flex;
-    border: 1px solid #232323;
-    background-color: #dddddd;
-    padding: 0.4rem 0.4rem;
     border-radius: 16px;
+    border: 1px solid rgba(0, 31, 41, 0.16);
+    background: #F5F7F9;
+    padding: 0.4rem 0.4rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;

@@ -1,6 +1,6 @@
 .app__portal {
     width: 100%;
-    max-width: 1340px;
+    max-width: 1600px;
     min-height: 100vh;
     margin: auto;
     padding: 0.8rem 0.8rem 0.2rem 0.8rem;
@@ -25,7 +25,7 @@
     background-color: #215FF2;
     padding: 0.6rem 1.2rem;
     border-radius: 16px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border: 1.2px solid #FFFFFF;
     outline: none;
     transition: color 0.2s ease, background-color 0.2s ease, border 0.2s ease;
@@ -38,11 +38,29 @@
 }
 
 .app__portal img:nth-child(3) {
-    width: 700px;
+    width: 800px;
     max-width: 100%;
     aspect-ratio: 16/9;
     height: auto;
     object-fit: fill;
+}
+
+@media all and (min-width: 1530px) {
+    .app__portal {
+        gap: 2rem;
+    }
+
+    .app__portal img:nth-child(1) {
+        width: 400px;
+    }
+
+    .app__portal img:nth-child(3) {
+        width: 90%;
+    }
+
+    .app__portal a {
+        font-size: 1.4rem;
+    }
 }
 
 @media (pointer: fine) and (hover: hover) {

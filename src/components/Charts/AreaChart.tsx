@@ -56,7 +56,7 @@ export default function AreaChart({
       {
         fill: true,
         label: label,
-        data: [98, 95, 110, 150, 132, 180, 210],
+        data: [98, 95, 110, 150, 132, 180, 150],
         borderColor: borderColor,
         backgroundColor: bgColor,
       },

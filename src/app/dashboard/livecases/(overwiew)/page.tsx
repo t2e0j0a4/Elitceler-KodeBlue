@@ -41,6 +41,10 @@ const page = () => {
                 <Suspense fallback={<EachCaseCard/>}>
                     <LiveCaseCard age={28} caseID='abc123' caseType='Heart Stroke' paymentType='Credit Card' gender='Male' />
                 </Suspense>
+                <Suspense fallback={<EachCaseCard/>}>
+                    <LiveCaseCard age={28} caseID='abc123' caseType='Heart Stroke' paymentType='Credit Card' gender='Male' />
+                </Suspense>
+                
             </section>
 
         </main>

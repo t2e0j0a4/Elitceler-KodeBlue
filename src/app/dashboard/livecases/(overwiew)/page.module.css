@@ -1,6 +1,6 @@
 .dashboard__livecases {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1800px;
     margin: 0 auto;
     height: 100%;
     padding: 1.2rem;
@@ -35,14 +35,14 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: auto;
     place-content: start;
-    gap: 1.6rem 1.2rem;
+    gap: 1.2rem 0.8rem;
 }
 
 @media all and (width >= 1440px) {
 
-    .livecases__main {
-        grid-template-columns: repeat(4, 280px);
-    }
+    /* .livecases__main {
+        grid-template-columns: repeat(auto 280px);
+    } */
 
 }
 

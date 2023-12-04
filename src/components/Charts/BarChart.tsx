@@ -37,6 +37,7 @@ export default function BarChart({bgColor, label}: {bgColor: string, label: stri
         label: label,
         data: [140, 200, 100, 98, 134, 340, 240],
         backgroundColor: bgColor,
+        borderRadius: 6
       },
     ],
   };
