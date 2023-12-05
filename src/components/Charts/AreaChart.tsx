@@ -1,31 +1,9 @@
 "use client";
-import React from "react";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler, Tooltip, Legend } from 'chart.js'
 
-// Chartjs
-import { Line } from "react-chartjs-2";
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend,
-} from "chart.js";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend
-);
+ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, Filler, Tooltip, Legend);
 
 export default function AreaChart({
   label,
@@ -36,33 +14,44 @@ export default function AreaChart({
   bgColor: string;
   borderColor: string;
 }) {
-  const labels = ["Jan", "Feb", "March", "April", "May", "June", "July"];
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        display: false,
+        display: false
       },
       title: {
         display: false,
       },
     },
+    scales: {
+      y: {
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          stepSize: 25
+        },
+      },
+    },
   };
-
+  
+  const labels = ['Jan', 'Feb', 'March', 'April', 'May', 'June'];
+  
   const data = {
     labels,
     datasets: [
       {
         fill: true,
         label: label,
-        data: [98, 95, 110, 150, 132, 180, 150],
+        data: [10, 40, 24, 21, 50, 79],
         borderColor: borderColor,
         backgroundColor: bgColor,
+        lineTension: 0.3
       },
     ],
-
-  };
+  };  
 
   return <Line options={options} data={data} />;
 }

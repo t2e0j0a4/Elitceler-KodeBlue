@@ -19,6 +19,7 @@ import { BsHeartPulse, BsArrowDownShort, BsArrowUpShort, BsDropletHalf } from "r
 
 // Components
 import CaseContactOptions from '@/components/CaseContactOptions/CaseContactOptions';
+import VitalsChart from '@/components/VitalsChart/VitalsChart';
 
 // Updated as a Dynamic Metadata if needed later, but as of now just a static Metadata
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 const page = ({params}: {params: { case: string }}) => {
 
-    const { current__case, case__head, head__side, head__talk, case__breadcrumb, livecase__main, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details, other__info, paramedic__loc, paramedic__map, health__info, healthInfo__main } = styles;
+    const { current__case, case__head, head__side, head__talk, livecase__main, general__info, patient__info, info__head, info__caseId, patient__case, general__title, case__details, patient__vitals, vitals__details, other__info, vitals__charts, paramedic__loc, paramedic__map, health__info, healthInfo__main } = styles;
 
     return (
         <main className={current__case}>
@@ -75,8 +76,8 @@ const page = ({params}: {params: { case: string }}) => {
                             <VitalInfoCard label='Heart Rate' HeadIcon={BsArrowDownShort} VitalIcon={IoIosPulse} vitalInfo='80 BPM' infoOutput='Normal' bgColor='#41CB68' />
                             <VitalInfoCard label='SPO2' HeadIcon={BsArrowUpShort} VitalIcon={BsDropletHalf} vitalInfo='96%' infoOutput='Insufficient' bgColor='#FADA33' />
                             <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
-                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
-                            <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
+                            <VitalInfoCard label='Heart Rate' HeadIcon={BsArrowDownShort} VitalIcon={IoIosPulse} vitalInfo='80 BPM' infoOutput='Normal' bgColor='#41CB68' />
+                            <VitalInfoCard label='SPO2' HeadIcon={BsArrowUpShort} VitalIcon={BsDropletHalf} vitalInfo='96%' infoOutput='Insufficient' bgColor='#FADA33' />
                             <VitalInfoCard label='Temperature' HeadIcon={BsArrowDownShort} VitalIcon={FaTemperatureHalf} vitalInfo='100.2F' infoOutput='High Temperature' bgColor='#F1182B' />
                         </div>
                     </section>
@@ -86,6 +87,13 @@ const page = ({params}: {params: { case: string }}) => {
                 <div className={other__info}>
 
                     {/* We are gonna include charts representing vitals info soon... */}
+
+                    <section className={vitals__charts}>
+                        <VitalsChart/>
+                        <VitalsChart/>
+                        <VitalsChart/>
+                        <VitalsChart/>
+                    </section>
                     
                     <section className={health__info}>
 
