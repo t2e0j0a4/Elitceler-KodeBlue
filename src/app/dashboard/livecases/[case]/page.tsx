@@ -97,7 +97,7 @@ const page = ({params}: {params: { case: string }}) => {
                     
                     <section className={health__info}>
 
-                        <GlucoMeter glucoScore={14} verdict='Healthy' />
+                        <GlucoMeter glucoScore={7} verdict='Danger' />
                         <HealthDetailCard Icon={IoMdEye} iconColor='#65478F' label='Eye Response' count={2} countFor='Pressure'/>
                         <HealthDetailCard Icon={MdSpatialAudioOff} iconColor='#30b7f5' label='Verbal Response' count={4} countFor='Confused'/>
                         <HealthDetailCard Icon={FaHandPaper} iconColor='#a05efd' label='Motor Response' count={1} countFor='Confused'/>
@@ -158,8 +158,9 @@ const GlucoMeter = ({glucoScore, verdict}: {glucoScore: number, verdict: string}
             <p>Glasgow Coma Score (GCS)</p>
             <div className={styles.glucoBar__box}>
                 <p style={{ color: `${glucoScore < 8 ? 'rgb(247, 65, 65)' : glucoScore < 11 ? 'rgb(250, 250, 56)' : 'rgb(78, 245, 78)'}` }}>{glucoScore < 10 ? `0${glucoScore}` : glucoScore}</p>
-                <span style={{ backgroundColor: `${glucoScore < 8 ? 'rgb(247, 65, 65)' : glucoScore < 11 ? 'rgb(250, 250, 56)' : 'rgb(78, 245, 78)'}` }}>{verdict}</span>
+                <p>Points</p>
             </div>
+            <span style={{ backgroundColor: `${glucoScore < 8 ? 'rgb(247, 65, 65)' : glucoScore < 11 ? 'rgb(250, 250, 56)' : 'rgb(78, 245, 78)'}` }}>{verdict}</span>
         </div>
     )
 }
