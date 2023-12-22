@@ -28,14 +28,10 @@ const Sidebar = () => {
                     <li><Link href={"/dashboard/livecases"} className={`${pathname.includes('/dashboard/livecases') && page__active}`} ><FaStarOfLife fontSize={20}/><span>Live Cases</span></Link></li>
                     <li><Link href={"/dashboard/staff"} className={`${(pathname.includes('/dashboard/staff') && !(pathname.includes('/staff/hospital'))) && page__active}`} ><MdOutlineAddHome fontSize={22}/><span>Add Staff</span></Link></li>
                     <li><Link href={"/dashboard/staff/hospital"} className={`${pathname.includes('/staff/hospital') && page__active}`} ><LuStethoscope fontSize={20}/><span>Hospital Staff</span></Link></li>
-                    <li><Link href={"/dashboard/settings"} className={`${pathname === '/dashboard/settings' && page__active}`} ><AiOutlineSetting fontSize={20}/><span>Settings</span></Link></li>
+                    <li><Link href={"/dashboard/settings"} className={`${pathname === '/dashboard/settings' && page__active}`} ><CgProfile fontSize={20}/><span>Profile</span></Link></li>
                 </ul>
             </div>
             <div className={sidebar__bottom}>
-                <div className={sidebar__profile}>
-                    <CgProfile fontSize={20}/>
-                    <p><span>Name</span> Hospital Management</p>
-                </div>
                 <button type='button'><FiLogOut fontSize={20}/><span>Logout</span></button>
             </div>
         </aside>

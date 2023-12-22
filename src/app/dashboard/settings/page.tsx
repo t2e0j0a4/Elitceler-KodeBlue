@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import styles from "./page.module.css";
 
 // React Icons
-import { AiOutlineSetting } from "react-icons/ai";
+import { CgProfile } from 'react-icons/cg';
 
 // Component
 import AccountDelete from './components/AccountDelete';
@@ -22,8 +22,8 @@ const page = () => {
     return (
         <main className={app__settings}>
             <div className={settings__head}>
-                <AiOutlineSetting fontSize={21} color={'#484848'} />
-                <p>Settings</p>
+                <CgProfile fontSize={21} color={'#484848'} />
+                <p>Profile</p>
             </div>
             <section className={settings__main}><AccountDetails/><ChangePassword/><AccountDelete/></section>
         </main>
