@@ -51,7 +51,40 @@
     color: #232323;
 }
 
-.register__form > input, .input__detail > input {
+.register__form h3 {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: #232323;
+}
+
+.multi__input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location__detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main__location {
+    width: 100%;
+    position: relative;
+}
+
+.location__suggestions {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 48px;
+}
+
+.register__form > input, .input__detail > input, .multi__input > input, .main__location > input {
     width: 100%;
     border: 1.6px solid #23232398;
     padding: 0.6rem 1.2rem;
