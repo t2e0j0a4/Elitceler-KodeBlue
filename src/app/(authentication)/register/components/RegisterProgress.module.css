@@ -1,0 +1,63 @@
+.progress {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.point {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1.6px solid #215FFA;
+    padding: 0.4rem;
+    cursor: default;
+    position: relative;
+}
+
+.point.make__progress {
+    position: relative;
+}
+
+.point::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    transition: all 0.3s ease-in;
+}
+
+.point.make__progress::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+    background-color: #215FFA;
+}
+
+@media all and (max-width: 600px) {
+    .progress {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+    
+    .point {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1.6px solid #215FFA;
+        padding: 0.4rem;
+        cursor: default;
+        position: relative;
+    }
+}
