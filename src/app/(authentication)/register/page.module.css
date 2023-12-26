@@ -56,6 +56,7 @@
     text-align: left;
     font-size: 1rem;
     color: #232323;
+    margin-top: 1rem;
 }
 
 .multi__input {
@@ -63,6 +64,28 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.form__check {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form__check input {
+    accent-color: #215FFA;
+    width: 20px;
+    height: 20px;
+}
+
+.form__check label {
+    font-size: 1rem;
+    color: #232323;
+    font-weight: 500;
+    text-align: left;
 }
 
 .location__detail {
@@ -104,6 +127,24 @@
     gap: 0.4rem;
 }
 
+#tnc {
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+#tnc a {
+    padding: 0.1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+#tnc > a:focus-visible {
+    outline: 1.2px solid #215FF2;
+}
+
+
 .input__detail p {
     font-size: 0.8rem;
     color: #5d5d5d;
@@ -113,12 +154,29 @@
 .register__form > button {
     width: 100%;
     border-radius: 8px;
+    margin-top: 0.5rem;
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
     font-family: inherit;
     background-color: #215FF2;
     color: #FFFFFF;
     border: 1.2px solid #215FF2;
+    outline: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.register__form > label {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #215FF2;
+    border: 1.2px solid #215FF2;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
     outline: none;
     transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -133,6 +191,53 @@
 }
 
 .register__form > button:focus-visible {
+    background-color: #FFF;
+    color: #215FF2;
+}
+
+.final__showcase {
+    width: 100%;
+    max-width: 520px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 24px;
+    box-shadow: 0 0 4px 1px #23232310;
+}
+
+.final__showcase > p {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+}
+
+.final__showcase img {
+    height: 240px;
+    width: auto;
+    aspect-ratio: 1.2/1;
+    object-fit: cover;
+}
+
+.final__showcase a {
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #215FF2;
+    color: #FFFFFF;
+    border: 1.2px solid #215FF2;
+    outline: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.final__showcase > a:focus-visible {
     background-color: #FFF;
     color: #215FF2;
 }

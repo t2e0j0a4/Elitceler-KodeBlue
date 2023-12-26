@@ -33,3 +33,9 @@ export interface AreaChartsDataProps {
     bgColor: string,
     borderColor: string
 }
+
+export interface CheckboxType {
+    id: number,
+    value: string,
+    label: string
+}

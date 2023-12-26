@@ -12,7 +12,7 @@ const RegisterProgress = () => {
     return (
         <div className={styles.progress}>
             {
-                Array.from({length: 9}).map((_, index) => {
+                Array.from({length: 8}).map((_, index) => {
                     return (
                         <span className={`${styles.point} ${ ((index + 1) <= sectionsDone) && styles.make__progress } ${index === sectionsDone && styles.making__progress}`} key={index}>{index + 1}</span>
                     )
