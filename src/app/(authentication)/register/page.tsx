@@ -74,6 +74,7 @@ const Register = () => {
     <main className={app__register}>
       <div className={register__center}>
         
+        <Image src={"/others/Logo.svg"} alt="Kodeblue" width={180} height={180}/>
         <h1>Registration</h1>
         <RegisterProgress/>
 
@@ -412,10 +413,10 @@ const Register = () => {
                 </div>
                 <div className={styles.form__check}>
                   <input type="radio" value="Not Agreed" required onChange={(e) => {updateRegisterInfo(e)}} id="terms-notagree" name="termsAcceptance"  />
-                  <label htmlFor="compilance-notAvailable">I don&#39;t Agree </label>
+                  <label htmlFor="terms-notagree">I don&#39;t Agree </label>
                 </div>
 
-                <button type="submit">Register</button>
+                <button type="submit" disabled={hospitalRegister.termsAcceptance === 'Agreed' ? false : true}>Register</button>
 
               </form>
             )
