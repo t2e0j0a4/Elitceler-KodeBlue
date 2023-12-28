@@ -447,7 +447,7 @@ const Register = () => {
 
 export default Register;
 
-export const LocationAutoComplete = () => {
+const LocationAutoComplete = () => {
 
   const appContext = useContext(AppContext) as AppContextTypes;
   const { hospitalRegister, setHospitalRegister, updateRegisterInfo } = appContext;
